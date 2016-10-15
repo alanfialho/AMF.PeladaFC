@@ -110,7 +110,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain.Model\Amf.PeladaFC.DomainModel.csproj">
+    <ProjectReference Include="..\DomainModel\Amf.PeladaFC.DomainModel.csproj">
       <Project>{E0DC1E33-2453-4EB6-8E14-905FD3D01CFE}</Project>
       <Name>Amf.PeladaFC.DomainModel</Name>
     </ProjectReference>

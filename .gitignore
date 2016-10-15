@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/.vs/PeladaFC/v14
+/API/obj/Debug
+/DomainModel/obj/Debug
+/InfraEstrutura/obj/Debug
