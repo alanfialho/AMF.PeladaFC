@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Amf.PeladaFC.DomainModel.Core
 {
@@ -6,16 +7,10 @@ namespace Amf.PeladaFC.DomainModel.Core
     {
         public static Administrador TornarAdministrador(Peladeiro peladeiro)
         {
-
-            return new Administrador(peladeiro.Id, peladeiro.Email)
-            {
-                Apelido = peladeiro.Apelido,
-                Celular = peladeiro.Celular,
-                NomeCompleto = peladeiro.NomeCompleto
-            };
+            throw new NotImplementedException();
         }
 
-        private Administrador(Guid id, string email) : base(id, email)
+        private Administrador(Guid id, string nomeCompleto, Procura tipoProcura, HashSet<Posicao> posicoes) : base(id, nomeCompleto, tipoProcura, posicoes)
         {
             
         }

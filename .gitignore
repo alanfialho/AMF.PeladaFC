@@ -49,3 +49,8 @@ Temporary Items
 /API/obj/Debug
 /DomainModel/obj/Debug
 /InfraEstrutura/obj/Debug
+/API/bin/Debug
+/DomainModel/bin/Debug
+/InfraEstrutura/bin/Debug
+/packages/AutoMapper.5.0.2
+/packages

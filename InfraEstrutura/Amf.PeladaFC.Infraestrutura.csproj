@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Amf.Framework">
+      <HintPath>..\..\AMF.Framework\bin\Release\Amf.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=5.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.5.0.2\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -113,10 +116,6 @@
     <ProjectReference Include="..\DomainModel\Amf.PeladaFC.DomainModel.csproj">
       <Project>{E0DC1E33-2453-4EB6-8E14-905FD3D01CFE}</Project>
       <Name>Amf.PeladaFC.DomainModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Framework\Amf.Framework.csproj">
-      <Project>{ff3a9633-7da8-4341-9ef5-70e0456d2815}</Project>
-      <Name>Amf.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Amf.Framework">
+      <HintPath>..\..\AMF.Framework\bin\Release\Amf.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,17 +53,13 @@
     <Compile Include="Servico.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dados\Amf.PeladaFC.Infraestrutura.csproj">
+    <ProjectReference Include="..\InfraEstrutura\Amf.PeladaFC.Infraestrutura.csproj">
       <Project>{BE71FFEB-E937-46B7-83C3-E971F47A5641}</Project>
       <Name>Amf.PeladaFC.Infraestrutura</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain.Model\Amf.PeladaFC.DomainModel.csproj">
+    <ProjectReference Include="..\DomainModel\Amf.PeladaFC.DomainModel.csproj">
       <Project>{E0DC1E33-2453-4EB6-8E14-905FD3D01CFE}</Project>
       <Name>Amf.PeladaFC.DomainModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Framework\Amf.Framework.csproj">
-      <Project>{ff3a9633-7da8-4341-9ef5-70e0456d2815}</Project>
-      <Name>Amf.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
