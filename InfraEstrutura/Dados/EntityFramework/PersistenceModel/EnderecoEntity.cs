@@ -11,6 +11,7 @@ namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework.PersistenceModel
         public string Cep { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
+        public string UF { get; set; }
         public string Estado { get; set; }
     }
 }

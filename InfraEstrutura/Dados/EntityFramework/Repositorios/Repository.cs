@@ -5,12 +5,16 @@ using AutoMapper;
 
 namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework
 {
-    public abstract class Repository<C, TDOMAIN, TENTITY, CP> : IRepository<TDOMAIN, CP> 
+    public abstract class Repository<TDOMAIN, TENTITY, CP> : IRepository<TDOMAIN, CP> 
         where TDOMAIN : class 
         where TENTITY: class
-        where C : DbContext, new()
     {
-        protected readonly C _contexto = new C();
+        protected readonly DbContext _contexto;
+
+        public Repository(DbContext contexto)
+        {
+            _contexto = contexto;
+        }
 
         public virtual void Atualizar(TDOMAIN entity)
         {

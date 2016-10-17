@@ -38,11 +38,11 @@ namespace Amf.PeladaFC.DomainModel.Core
         }
 
 
-        public Peladeiro(Guid id, string nomeCompleto, Procura tipoProcura, HashSet<Posicao> posicoes): base(id) 
+        public Peladeiro(Guid id, string nomeCompleto, Procura tipoProcura, IEnumerable<Posicao> posicoes): base(id) 
         {
             NomeCompleto = nomeCompleto;
             TipoProcura = tipoProcura;
-            _posicoes = posicoes;
+            _posicoes = new HashSet<Posicao>(posicoes);
         }
 
         public virtual void Sair(Pelada deQual)

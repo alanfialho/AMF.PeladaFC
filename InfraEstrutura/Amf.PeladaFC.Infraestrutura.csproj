@@ -98,10 +98,9 @@
     <Compile Include="Dados\EntityFramework\PersistenceModel\EnderecoEntity.cs" />
     <Compile Include="Dados\EntityFramework\PersistenceModel\PeladaEntity.cs" />
     <Compile Include="Dados\EntityFramework\PersistenceModel\PeladeiroEntity.cs" />
-    <Compile Include="Dados\EntityFramework\Repositorios\PeladaRepository.cs" />
+    <Compile Include="Dados\EntityFramework\PersistenceModel\PosicaoEntity.cs" />
     <Compile Include="Dados\EntityFramework\Repositorios\PeladeiroRepository.cs" />
     <Compile Include="Dados\EntityFramework\Repositorios\Repository.cs" />
-    <Compile Include="Dados\EntityFramework\UnitOfWork.cs" />
     <Compile Include="Mappers\AutoMapperConfig.cs" />
     <Compile Include="Mappers\DomainToEntityProfile.cs" />
     <Compile Include="Mappers\EntityToDomainProfile.cs" />
