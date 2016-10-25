@@ -1,48 +1,33 @@
 ﻿using Amf.Framework.DDDConcepts;
-using Amf.Framework.ObjetosComuns;
-using System;
 using System.Collections.Generic;
 
 namespace Amf.PeladaFC.DomainModel.Core
 {
-    public class Peladeiro : Aggregate
+    public class Peladeiro : Entity<int>
     {
-        private Endereco _referencia;
         private HashSet<Posicao> _posicoes;
+        private ICollection<Posicao> posicoes;
 
-
-        public enum Procura
-        {
-            Raio,
-            Referencia
-        }
-
-        public string NomeCompleto { get; set; }
-
-        public Endereco Referencia {
-            get { return _referencia; }
-            set
-            {
-                if (value.Estado == null)
-                    throw new ArgumentException("Ao menos estado precisa ser preenchido no endereço");
-
-                _referencia = value;
-            }
-        }
-
-        public Procura TipoProcura { get; set; }
-        
-        public IEnumerable<Posicao> Posicoes
+        public string NomeCompleto { get; set; } 
+        public ICollection<Posicao> Posicoes
         {
             get { return _posicoes; }
         }
 
-
-        public Peladeiro(Guid id, string nomeCompleto, Procura tipoProcura, IEnumerable<Posicao> posicoes): base(id) 
+        public Peladeiro(string nomeCompleto, ICollection<Posicao> posicoes): base() 
         {
             NomeCompleto = nomeCompleto;
-            TipoProcura = tipoProcura;
             _posicoes = new HashSet<Posicao>(posicoes);
+        }
+
+        public void Adicionar(Posicao posicao)
+        {
+            _posicoes.Add(posicao);
+        }
+
+        public void Remover(Posicao posicao)
+        {
+            _posicoes.Remove(posicao);
         }
 
         public virtual void Sair(Pelada deQual)

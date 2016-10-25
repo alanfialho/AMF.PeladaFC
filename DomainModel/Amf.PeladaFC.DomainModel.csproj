@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Administrador.cs" />
+    <Compile Include="Core\Conta.cs" />
     <Compile Include="Core\Convite.cs" />
     <Compile Include="Core\ConviteJaAceitoException.cs" />
     <Compile Include="Core\ConviteNaoAceitoException.cs" />
@@ -44,12 +45,15 @@
     <Compile Include="Core\ConviteRedundanteException.cs" />
     <Compile Include="Core\ConviteStatus.cs" />
     <Compile Include="Core\IAdministradorRepository.cs" />
+    <Compile Include="Core\IContaRepository.cs" />
     <Compile Include="Core\IPeladaRepository.cs" />
     <Compile Include="Core\IPeladeiroRepository.cs" />
     <Compile Include="Core\Pelada.cs" />
     <Compile Include="Core\PeladaFinalizadaException.cs" />
     <Compile Include="Core\Peladeiro.cs" />
+    <Compile Include="Core\ContaFactory.cs" />
     <Compile Include="Core\Posicao.cs" />
+    <Compile Include="Core\Procura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

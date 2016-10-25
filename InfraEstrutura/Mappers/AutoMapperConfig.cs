@@ -10,6 +10,7 @@ namespace Amf.PeladaFC.Infraestrutura.Mappers
             {
                 x.AddProfile<EntityToDomainProfile>();
                 x.AddProfile<DomainToEntityProfile>();
+                x.AddProfile<FrameworkToEntityProfile>();
             });
         }
 

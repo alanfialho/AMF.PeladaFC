@@ -5,18 +5,15 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework
 {
-    public class PeladaFCContexto : IdentityDbContext<ApplicationUser>
+    public class PeladaFCContexto : DbContext
     {
         public DbSet<PeladeiroEntity> Peladeiros { internal get; set; }
         public DbSet<PeladaEntity> Peladas { internal get; set; }
         public DbSet<EnderecoEntity> Enderecos { internal get; set; }
+        public DbSet<PosicaoEntity> Posicoes { internal get; set; }
+        public DbSet<ContaEntity> Contas { internal get; set; }
 
-        public PeladaFCContexto() : base("PeladaFC", throwIfV1Schema: false) { }
-
-        public static PeladaFCContexto Create()
-        {
-            return new PeladaFCContexto();
-        }
+        public PeladaFCContexto() : base("peladafc") { }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

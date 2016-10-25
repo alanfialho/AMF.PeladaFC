@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Amf.Framework.ObjetosComuns;
+using System;
 using System.Collections.Generic;
 
 namespace Amf.PeladaFC.DomainModel.Core
@@ -10,7 +11,7 @@ namespace Amf.PeladaFC.DomainModel.Core
             throw new NotImplementedException();
         }
 
-        private Administrador(Guid id, string nomeCompleto, Procura tipoProcura, HashSet<Posicao> posicoes) : base(id, nomeCompleto, tipoProcura, posicoes)
+        private Administrador(string nomeCompleto, ICollection<Posicao> posicoes) : base(nomeCompleto, posicoes)
         {
             
         }

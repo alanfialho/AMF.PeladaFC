@@ -11,6 +11,10 @@ namespace Amf.PeladaFC.Infraestrutura.Mappers
         {
             CreateMap<PeladeiroEntity, Peladeiro>();
             CreateMap<IQueryable<PeladeiroEntity>, IQueryable<Peladeiro>>();
+            CreateMap<PosicaoEntity, Posicao>();
+            CreateMap<IQueryable<PosicaoEntity>, IQueryable<Posicao>>();
+            CreateMap<ContaEntity, Conta>();
+            CreateMap<IQueryable<ContaEntity>, IQueryable<Conta>>();
         }
     }
 }
