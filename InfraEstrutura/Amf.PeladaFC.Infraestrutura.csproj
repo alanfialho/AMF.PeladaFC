@@ -93,6 +93,7 @@
   <ItemGroup>
     <Compile Include="Dados\EntityFramework\DbInitializer.cs" />
     <Compile Include="Dados\EntityFramework\FinalizacaoTransacaoException.cs" />
+    <Compile Include="Dados\EntityFramework\IRepositoryEF.cs" />
     <Compile Include="Dados\EntityFramework\PeladaFCContexto.cs" />
     <Compile Include="Dados\EntityFramework\PersistenceModel\ApplicationUser.cs" />
     <Compile Include="Dados\EntityFramework\PersistenceModel\ContaEntity.cs" />
@@ -100,9 +101,8 @@
     <Compile Include="Dados\EntityFramework\PersistenceModel\PeladaEntity.cs" />
     <Compile Include="Dados\EntityFramework\PersistenceModel\PeladeiroEntity.cs" />
     <Compile Include="Dados\EntityFramework\PersistenceModel\PosicaoEntity.cs" />
-    <Compile Include="Dados\EntityFramework\Repositorios\ContaRepository.cs" />
-    <Compile Include="Dados\EntityFramework\Repositorios\PeladeiroRepository.cs" />
-    <Compile Include="Dados\EntityFramework\Repositorios\Repository.cs" />
+    <Compile Include="Dados\EntityFramework\Repositorios\ContaRepositoryEF.cs" />
+    <Compile Include="Dados\EntityFramework\Repositorios\RepositoryEF.cs" />
     <Compile Include="Mappers\AutoMapperConfig.cs" />
     <Compile Include="Mappers\DomainToEntityProfile.cs" />
     <Compile Include="Mappers\EntityToDomainProfile.cs" />

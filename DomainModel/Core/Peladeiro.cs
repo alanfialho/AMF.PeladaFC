@@ -6,7 +6,6 @@ namespace Amf.PeladaFC.DomainModel.Core
     public class Peladeiro : Entity<int>
     {
         private HashSet<Posicao> _posicoes;
-        private ICollection<Posicao> posicoes;
 
         public string NomeCompleto { get; set; } 
         public ICollection<Posicao> Posicoes

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Amf.PeladaFC.DomainModel.Core
 {
-    public enum Procura : byte
+    public enum Descoberta : byte
     {
-        Raio,
+        LocalizacaoAtual,
         EnderecoReferencia
     }
 }

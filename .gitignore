@@ -85,3 +85,8 @@ Temporary Items
 /Amf.PeladaFC.APITests/bin/Release/Amf.PeladaFC.Infraestrutura.dll
 /Amf.PeladaFC.APITests/bin/Release/Amf.PeladaFC.DomainModel.pdb
 /Amf.PeladaFC.APITests/bin/Release/Amf.PeladaFC.DomainModel.dll
+/.vs/config
+/API/bin
+/WSPeladaFC/bin
+/WSPeladaFC/Content
+/WSPeladaFC/obj

@@ -5,13 +5,13 @@ using AutoMapper;
 
 namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework
 {
-    public abstract class Repository<TDOMAIN, TENTITY, CP> : IRepository<TDOMAIN, CP> 
+    public abstract class RepositoryEF<TDOMAIN, TENTITY, CP> : IRepositoryEF<TDOMAIN, TENTITY,CP> 
         where TDOMAIN : class 
         where TENTITY: class
     {
-        protected readonly DbContext _contexto;
+        protected DbContext _contexto;
 
-        public Repository(DbContext contexto)
+        public RepositoryEF(DbContext contexto)
         {
             _contexto = contexto;
         }
@@ -44,6 +44,11 @@ namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework
         {
             TENTITY persistenceEntity = Mapper.Map<TDOMAIN, TENTITY>(entity);
             _contexto.Set<TENTITY>().Add(persistenceEntity);
+        }
+
+        public void SetContexto(DbContext contexto) {
+
+            _contexto = contexto;
         }
     }
 }

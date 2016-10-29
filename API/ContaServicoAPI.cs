@@ -1,10 +1,8 @@
-﻿using Amf.Framework.Infraestrutura;
-using Amf.Framework.ObjetosComuns;
+﻿using Amf.Framework.ObjetosComuns;
 using Amf.PeladaFC.DomainModel.Core;
 using Amf.PeladaFC.Infraestrutura.Dados.EntityFramework;
 using System;
 using System.Collections.Generic;
-using static Amf.PeladaFC.DomainModel.Core.Peladeiro;
 
 namespace Amf.PeladaFC.API
 {
@@ -12,31 +10,26 @@ namespace Amf.PeladaFC.API
     {
         private readonly IContaRepository _contaRepository;
 
-        public ContaServicoAPI(PeladaFCContexto peladaFCContexto, 
-            IContaRepository contaRepository) : base (peladaFCContexto)
+        public ContaServicoAPI(PeladaFCContexto contexto, IContaRepository contaRepository):base(contexto)
         {
             _contaRepository = contaRepository;
         }
 
-        public Guid Criar(Peladeiro peladeiro)
+        public Guid Criar(string nomeCompletoPeladeiro, ICollection<Posicao> posicoesPeladeiro, Endereco referencia = null)
         {
-            return CriarInterno(peladeiro, null);
+            return CriarInterno(nomeCompletoPeladeiro, posicoesPeladeiro, referencia);
         }
 
-        public Guid Criar(Peladeiro peladeiro, Endereco referencia)
-        {
-            return CriarInterno(peladeiro, referencia);
-        }
-
-        private Guid CriarInterno(Peladeiro peladeiro, Endereco referencia)
+        private Guid CriarInterno(string nomeCompletoPeladeiro, ICollection<Posicao> posicoesPeladeiro, Endereco referencia)
         {
             Conta conta = null;
+            Peladeiro peladeiro = new Peladeiro(nomeCompletoPeladeiro, posicoesPeladeiro); 
 
-            if (referencia != null)
+            if (referencia != null)   
                 conta = ContaFactory.CriarContaComReferencia(peladeiro, referencia);
             else
                 conta = ContaFactory.CriarConta(peladeiro);
-
+            
             using (_contexto)
             {
                 _contaRepository.Salvar(conta);

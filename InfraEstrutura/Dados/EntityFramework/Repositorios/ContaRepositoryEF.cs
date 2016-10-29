@@ -4,9 +4,9 @@ using System;
 
 namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework.Repositorios
 {
-    public class ContaRepository : Repository<Conta, ContaEntity, Guid>, IContaRepository
+    public class ContaRepositoryEF : RepositoryEF<Conta, ContaEntity, Guid>, IContaRepository
     {
-        public ContaRepository(PeladaFCContexto contexto) : base(contexto)
+        public ContaRepositoryEF(PeladaFCContexto contexto) : base(contexto)
         {
         }
     }

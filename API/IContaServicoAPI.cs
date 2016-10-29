@@ -7,7 +7,6 @@ namespace Amf.PeladaFC.API
 {
     public interface IContaServicoAPI
     {
-        Guid Criar(Peladeiro peladeiro, Endereco referencia);
-        Guid Criar(Peladeiro peladeiro);
+        Guid Criar(string nomeCompletoPeladeiro, ICollection<Posicao> posicoesPeladeiro, Endereco referencia = null);
     }
 }

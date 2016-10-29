@@ -7,7 +7,7 @@ namespace Amf.PeladaFC.DomainModel.Core
     public class Conta : Aggregate
     {
         private Endereco _referencia;
-        private Procura _tipoProcura;
+        private Descoberta _descoberta;
         private Peladeiro _peladeiro;
 
         public Endereco Referencia
@@ -20,20 +20,20 @@ namespace Amf.PeladaFC.DomainModel.Core
             }
         }
 
-        public Procura TipoProcura { get { return _tipoProcura; } }
+        public Descoberta Descoberta { get { return _descoberta; } }
 
         public Peladeiro Peladeiro { get { return _peladeiro; } }
 
         public Conta(Guid id, Peladeiro peladeiro) : base(id)
         {
-            _tipoProcura = Procura.Raio;
+            _descoberta = Descoberta.LocalizacaoAtual;
             _peladeiro = peladeiro;
         }
 
         public Conta(Guid id, Endereco referencia, Peladeiro peladeiro) : base(id)
         {
             ValidarReferencia(referencia);
-            _tipoProcura = Procura.EnderecoReferencia;
+            _descoberta = Descoberta.EnderecoReferencia;
             _peladeiro = peladeiro;
             _referencia = referencia;
         }
@@ -44,19 +44,15 @@ namespace Amf.PeladaFC.DomainModel.Core
                 throw new ArgumentException("Ao menos estado precisa ser preenchido no endereço");
         }
 
-        public void AlterarTipoProcuraParaRaio() {
-            _tipoProcura = Procura.Raio;
+        public void AlterarDescobertaParaLocalizacaoAtual() {
+            _descoberta = Descoberta.LocalizacaoAtual;
+            _referencia = null;
         }
 
-        public void AlterarTipoProcuraParaReferencia()
-        {
-            _tipoProcura = Procura.EnderecoReferencia;
-        }
-
-        public void AlterarTipoProcura(Endereco referencia)
+        public void AlterarDescobertaParaReferencia(Endereco referencia)
         {
             ValidarReferencia(referencia);
-            AlterarTipoProcuraParaReferencia();
+            _descoberta = Descoberta.EnderecoReferencia;
         }
     }
 }

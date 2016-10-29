@@ -3,14 +3,13 @@ using System.Data.Entity;
 
 namespace Amf.PeladaFC.API
 {
-    public class ServicoAPI
+    public abstract class ServicoAPI
     {
         protected DbContext _contexto;
 
-        public ServicoAPI(DbContext contexto)
+        public  ServicoAPI(DbContext contexto)
         {
             _contexto = contexto;
         }
-
     }
 }
