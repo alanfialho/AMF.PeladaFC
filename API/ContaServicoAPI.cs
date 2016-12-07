@@ -10,25 +10,28 @@ namespace Amf.PeladaFC.API
     {
         private readonly IContaRepository _contaRepository;
 
-        public ContaServicoAPI(PeladaFCContexto contexto, IContaRepository contaRepository):base(contexto)
+        public ContaServicoAPI(PeladaFCContexto contexto, IContaRepository contaRepository) : base(contexto)
         {
             _contaRepository = contaRepository;
         }
 
-        public Guid Criar(string nomeCompletoPeladeiro, ICollection<Posicao> posicoesPeladeiro, Endereco referencia = null)
+        public Guid Criar(string nomeCompletoPeladeiro, 
+            ICollection<Posicao> posicoesPeladeiro = null, 
+            Endereco referencia = null,
+            byte[] foto = null)
         {
-            return CriarInterno(nomeCompletoPeladeiro, posicoesPeladeiro, referencia);
+            return CriarInterno(nomeCompletoPeladeiro, posicoesPeladeiro, referencia, foto);
         }
 
-        private Guid CriarInterno(string nomeCompletoPeladeiro, ICollection<Posicao> posicoesPeladeiro, Endereco referencia)
+        private Guid CriarInterno(string nomeCompletoPeladeiro, ICollection<Posicao> posicoesPeladeiro , Endereco referencia, byte[] foto)
         {
-            Conta conta = null;
-            Peladeiro peladeiro = new Peladeiro(nomeCompletoPeladeiro, posicoesPeladeiro); 
+            Peladeiro peladeiro = posicoesPeladeiro == null ? new Peladeiro(nomeCompletoPeladeiro) : 
+                new Peladeiro(nomeCompletoPeladeiro, posicoesPeladeiro);
 
-            if (referencia != null)   
-                conta = ContaFactory.CriarContaComReferencia(peladeiro, referencia);
-            else
-                conta = ContaFactory.CriarConta(peladeiro);
+            Conta conta = referencia == null ? ContaFactory.CriarConta(peladeiro) : 
+                ContaFactory.CriarContaComReferencia(peladeiro, referencia);
+
+            conta.Foto = foto;
             
             using (_contexto)
             {

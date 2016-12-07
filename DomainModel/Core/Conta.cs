@@ -24,6 +24,8 @@ namespace Amf.PeladaFC.DomainModel.Core
 
         public Peladeiro Peladeiro { get { return _peladeiro; } }
 
+        public byte[] Foto { get; set; }
+
         public Conta(Guid id, Peladeiro peladeiro) : base(id)
         {
             _descoberta = Descoberta.LocalizacaoAtual;

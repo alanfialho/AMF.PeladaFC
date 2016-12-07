@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework.PersistenceModel
@@ -8,7 +7,6 @@ namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework.PersistenceModel
     public class PeladeiroEntity
     {
         public int Id { get; set; }
-        public byte[] Foto { get; set; }
         public string NomeCompleto { get; set; }
         public virtual ICollection<PosicaoEntity> Posicoes { get; set; }
     }

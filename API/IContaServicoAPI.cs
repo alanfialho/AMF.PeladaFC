@@ -7,6 +7,9 @@ namespace Amf.PeladaFC.API
 {
     public interface IContaServicoAPI
     {
-        Guid Criar(string nomeCompletoPeladeiro, ICollection<Posicao> posicoesPeladeiro, Endereco referencia = null);
+        Guid Criar(string nomeCompletoPeladeiro, 
+            ICollection<Posicao> posicoesPeladeiro = null, 
+            Endereco referencia = null, 
+            byte[] foto = null);
     }
 }

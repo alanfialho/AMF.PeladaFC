@@ -13,6 +13,14 @@ namespace Amf.PeladaFC.DomainModel.Core
             get { return _posicoes; }
         }
 
+        public Peladeiro(string nomeCompleto)
+        {
+            NomeCompleto = nomeCompleto;
+            _posicoes = new HashSet<Posicao>();
+            _posicoes.Add(new Posicao("QL", "Qualquer", "Salao"));
+            _posicoes.Add(new Posicao("QL", "Qualquer", "Campo"));
+        }
+
         public Peladeiro(string nomeCompleto, ICollection<Posicao> posicoes): base() 
         {
             NomeCompleto = nomeCompleto;

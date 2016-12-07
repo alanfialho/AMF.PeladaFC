@@ -1,6 +1,4 @@
-﻿using Amf.Framework.ObjetosComuns;
-using Amf.PeladaFC.API;
-using Amf.PeladaFC.DomainModel.Core;
+﻿using Amf.PeladaFC.API;
 using Amf.PeladaFC.Infraestrutura.Dados.EntityFramework;
 using Amf.PeladaFC.Infraestrutura.Dados.EntityFramework.Repositorios;
 using System;
@@ -22,19 +20,15 @@ namespace WSPeladaFC.Controllers
 
         [Route("Criar")]
         [HttpPost]
-        public Resposta Criar(ContaDTO conta) {
+        public IHttpActionResult Criar([FromBody] ContaDTO dto) {
 
             try
             {
-                return new SucessoResposta(_servico.Criar(
-                    conta.NomeCompletoPeladeiro, 
-                    conta.PosicoesPeladeiro, 
-                    conta.Referencia
-                ));
+                return Ok(new { Id = _servico.Criar(dto.NomeCompletoPeladeiro, foto: dto.Foto) });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return new ErroResposta();
+                return InternalServerError(ex);
             }
         }
     }

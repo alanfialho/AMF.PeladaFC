@@ -24,7 +24,7 @@ namespace Amf.PeladaFC.API.Tests
         {
             
             PeladaFCContexto contexto = new PeladaFCContexto();
-            IContaServicoAPI servico = new ContaServicoAPI(new ContaRepositoryEF(contexto));
+            IContaServicoAPI servico = new ContaServicoAPI(contexto, new ContaRepositoryEF(contexto));
             Endereco endereco = new Endereco("test", "1", "81021-180", "vila rosaria", "sao paulo", new Estado("SP", "São Paulo"));
             servico.Criar("alan test", new HashSet<Posicao>() { new Posicao("QL", "Qualquer", Posicao.SALAO) }, endereco);
         }

@@ -9,5 +9,6 @@ namespace WSPeladaFC.Models
         public string NomeCompletoPeladeiro { get; set; }
         public ICollection<Posicao> PosicoesPeladeiro { get; set; }
         public Endereco Referencia { get; set; }
+        public byte[] Foto { get; set; }
     }
 }
