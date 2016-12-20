@@ -78,6 +78,8 @@
     <Compile Include="Initializer.cs" />
     <Compile Include="PeladeiroServicoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicoContaTests.cs" />
+    <Compile Include="ServicoUsuarioTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\API\Amf.PeladaFC.API.csproj">

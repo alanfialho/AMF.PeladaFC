@@ -8,8 +8,7 @@ namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework.PersistenceModel
     {
         public Guid Id { get; set; }
         public byte[] Foto { get; set; }
-        public EnderecoEntity Referencia { get; set; }
-        public byte TipoProcura { get; set; }
         public PeladeiroEntity Peladeiro { get; set; }
+        public UsuarioEntity Usuario { get; set;}
     }
 }

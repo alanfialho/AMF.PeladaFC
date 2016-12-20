@@ -7,8 +7,8 @@ namespace WSPeladaFC.Models
     public class ContaDTO
     {
         public string NomeCompletoPeladeiro { get; set; }
-        public ICollection<Posicao> PosicoesPeladeiro { get; set; }
-        public Endereco Referencia { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
         public byte[] Foto { get; set; }
     }
 }

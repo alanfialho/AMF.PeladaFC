@@ -1,9 +1,8 @@
 ﻿using System.Linq;
-using Amf.Framework.DDDConcepts;
 using System.Data.Entity;
 using AutoMapper;
 
-namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework
+namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework.Repositorios
 {
     public abstract class RepositoryEF<TDOMAIN, TENTITY, CP> : IRepositoryEF<TDOMAIN, TENTITY,CP> 
         where TDOMAIN : class 

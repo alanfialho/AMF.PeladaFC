@@ -12,15 +12,13 @@ namespace Amf.PeladaFC.Infraestrutura.Dados.EntityFramework
         public DbSet<EnderecoEntity> Enderecos { internal get; set; }
         public DbSet<PosicaoEntity> Posicoes { internal get; set; }
         public DbSet<ContaEntity> Contas { internal get; set; }
+        public DbSet<UsuarioEntity> Usuarios { internal get; set; }
 
         public PeladaFCContexto() : base("peladafc") { }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
-            modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
-            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
         }
     }
 }
